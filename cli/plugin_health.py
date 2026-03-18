@@ -114,3 +114,29 @@ def test_plugin(name: str, fail_fast: bool = False, summary_only: bool = False):
     report = check_plugin_health(name)
     # Add lifecycle hook validation, method introspection, etc.
     return report
+
+
+
+def list_plugin_methods(plugin_name=None):
+    """
+    Return available methods for a plugin.
+    If plugin_name is provided, return methods for that plugin only.
+    """
+    from registry.plugin_register import plugin_registry
+
+    if not plugin_registry:
+        print("⚠️ No plugins registered.")
+        return []
+
+    if plugin_name:
+        plugin = plugin_registry.get(plugin_name)
+        if not plugin:
+            print(f"⚠️ Plugin '{plugin_name}' not found.")
+            return []
+        return plugin.get("methods", [])
+
+    # Otherwise, list methods for all plugins
+    all_methods = {}
+    for name, plugin in plugin_registry.items():
+        all_methods[name] = plugin.get("methods", [])
+    return all_methods
