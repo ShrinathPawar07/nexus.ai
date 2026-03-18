@@ -109,4 +109,18 @@ def run_registry_doctor(registry=None):
 
     return True
 
-__all__ = ["register_plugin", "list_registered_plugins", "registry_store", "save_registry_to_disk", "run_registry_doctor"]
+def validate_plugin_metadata(plugin: dict):
+    """
+    Validate that a plugin has required metadata fields.
+    Returns True if valid, raises ValueError if missing.
+    """
+    required_fields = ["name", "version", "vertical"]
+
+    for field in required_fields:
+        if field not in plugin or not plugin[field]:
+            raise ValueError(f"Plugin metadata missing required field: {field}")
+
+    print(f"✅ Plugin '{plugin['name']}' metadata validated.")
+    return True
+
+__all__ = ["register_plugin", "list_registered_plugins", "registry_store", "save_registry_to_disk", "run_registry_doctor", "validate_plugin_metadata"]
