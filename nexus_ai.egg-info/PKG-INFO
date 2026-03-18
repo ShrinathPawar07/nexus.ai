@@ -1,0 +1,26 @@
+Metadata-Version: 2.4
+Name: nexus_ai
+Version: 0.1.0
+Summary: Modular AI copilot engine for cross-industry applications
+Author: Shri
+License: MIT
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: fastapi
+Requires-Dist: pydantic
+Requires-Dist: uvicorn
+Requires-Dist: transformers
+Requires-Dist: numpy
+Requires-Dist: scikit-learn
+Requires-Dist: httpx
+Requires-Dist: loguru
+Dynamic: author
+Dynamic: classifier
+Dynamic: description-content-type
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary

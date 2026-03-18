@@ -1,0 +1,12 @@
+{
+   
+  "python.envFile": "${workspaceFolder}/.env",
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/nexus_ai"
+  ],
+  "python.defaultInterpreterPath": "python",
+  "editor.tabSize": 4,
+  "files.autoSave": "onFocusChange"
+
+
+}

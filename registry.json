@@ -1,0 +1,13 @@
+{
+  "name": "fraud_detector",
+  "module": "modules.fintech.fraud_detector",
+  "class": "FraudDetector",
+  "metadata": {
+    "vertical": "fintech",
+    "lifecycle": "active",
+    "description": "Detects fraudulent transactions using rule-based heuristics and anomaly scoring.",
+    "version": "1.0.0",
+    "author": "Shrinath",
+    "tags": ["fraud", "fintech", "detection", "risk"]
+  }
+}
