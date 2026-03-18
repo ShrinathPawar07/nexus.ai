@@ -80,7 +80,6 @@ def list_registered_plugins():
     for name, plugin in registry.items():
         print(f" - {name} ({plugin.get('vertical', 'unknown')})")
 
-__all__ = ["register_plugin", "list_registered_plugins", "registry_store", "save_registry_to_disk"]
 
 # ✅ Explicitly expose registry_store and save_registry_to_disk
 registry_store = plugin_registry  # reuse your in-memory store
@@ -109,3 +108,5 @@ def run_registry_doctor(registry=None):
         print(f" - {name} (vertical: {vertical})")
 
     return True
+
+__all__ = ["register_plugin", "list_registered_plugins", "registry_store", "save_registry_to_disk","run_registry_doctor"]
