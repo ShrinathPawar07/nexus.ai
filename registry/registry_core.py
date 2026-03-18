@@ -109,4 +109,4 @@ def run_registry_doctor(registry=None):
 
     return True
 
-__all__ = ["register_plugin", "list_registered_plugins", "registry_store", "save_registry_to_disk","run_registry_doctor"]
+__all__ = ["register_plugin", "list_registered_plugins", "registry_store", "save_registry_to_disk", "run_registry_doctor"]
