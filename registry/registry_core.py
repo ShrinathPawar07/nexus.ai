@@ -88,3 +88,24 @@ def save_registry_to_disk(store, path="registry_store.json"):
     import json
     with open(path, "w") as f:
         json.dump(store, f, indent=2)
+
+def run_registry_doctor(registry=None):
+    """
+    Simple health check for the plugin registry.
+    Prints diagnostics about registered plugins.
+    """
+    print("🩺 Running registry diagnostics...")
+
+    if registry is None:
+        registry = plugin_registry
+
+    if not registry or len(registry) == 0:
+        print("⚠️ No plugins registered.")
+        return False
+
+    print(f"✅ {len(registry)} plugin(s) currently registered:")
+    for name, plugin in registry.items():
+        vertical = plugin.get("vertical", "unknown") if isinstance(plugin, dict) else "unknown"
+        print(f" - {name} (vertical: {vertical})")
+
+    return True
